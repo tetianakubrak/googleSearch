@@ -3,7 +3,6 @@ Selenium Webdriver project with set of regression tests for Google Search
 Prerequisite to run the project
 JDK
 Maven
-Java IDE (Intellij)
 
 
 The project summery at a glance:
@@ -25,7 +24,7 @@ Before execution:
 
 
 Test execution:
-- Execution can be done by running GoogleSearchAnonymousUserTests class.
+- testng.xml file has been created with GoogleSearchAnonymousUserTests class, from where tests can be executed.
 
 
 
