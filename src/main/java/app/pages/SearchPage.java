@@ -2,10 +2,7 @@ package app.pages;
 
 import baseWebSetup.BaseSetup;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 
 import java.util.List;
@@ -55,7 +52,7 @@ public class SearchPage extends BaseSetup {
                 "Search result validation failed in [ + i + ]."));
     }
 
-    public static void clickGoogleSearchButton(){
+    public static void clickGoogleSearchButton() {
         log.info("Click Google Search Button");
         driver.findElement(By.cssSelector(SEARCH_BUTTON)).click();
     }
