@@ -21,7 +21,7 @@ public class SearchPage extends BaseSetup {
     }
 
     public static void clickAcceptCookiesButton() {
-        log.info("Verify That Cookies Page Is Opened");
+        log.info("Click Accept Cookies Button");
         driver.findElement(By.xpath(ACCEPT_COOKIES_BUTTON)).click();
     }
 
@@ -56,7 +56,7 @@ public class SearchPage extends BaseSetup {
 
     public static void clickGoogleSearchButton() {
         log.info("Click Google Search button");
-        driver.findElements(By.cssSelector(SEARCH_BUTTON));
+        driver.findElement(By.cssSelector(SEARCH_BUTTON)).click();
     }
 
     public static void verifySearchResultPageIsNotShown() {
