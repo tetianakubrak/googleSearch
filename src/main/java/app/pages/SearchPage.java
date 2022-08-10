@@ -70,14 +70,17 @@ public class SearchPage extends BaseSetup {
 
     public static void verifySearchResultPageIsEmpty() {
         log.info("Verify Search Results page is Empty");
-        boolean present;
-        try {
-            driver.findElement(By.cssSelector(SEARCH_RESULT));
-            present = true;
-        } catch (NoSuchElementException e) {
-            present = false;
-        }
-        Assert.assertFalse(present, "Search Page is not empty!");
+        Assert.assertFalse(checkVisibilityofElement(SEARCH_RESULT));
     }
 
+
+    public static boolean checkVisibilityofElement(String locator) {
+        try {
+            WebElement element = driver.findElement(By.cssSelector(locator));
+            element.isDisplayed();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
