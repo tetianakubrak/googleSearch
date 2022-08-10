@@ -58,18 +58,18 @@ public class SearchPage extends BaseSetup {
     }
 
 
-    public static String verifyGoogleSearchButtonIsNotInteractable() {
-        log.info("Verify that Google Search is Not Interactable");
-        try {
-            driver.findElement(By.cssSelector(SEARCH_BUTTON)).click();
-        } catch (ElementNotInteractableException e) {
-            return "Button is not clickable";
-        }
-        return null;
+    public static void setFocusIntoSearchField() {
+        log.info("Set Focus into Search field");
+        driver.findElement(By.cssSelector(SEARCH_FIELD)).click();
     }
 
-    public static void verifySearchResultPageIsNotShown() {
-        log.info("Verify that no Search is started");
+    public static void pressEnterButton() {
+        log.info("Press Enter button");
+        driver.findElement(By.cssSelector(SEARCH_FIELD)).sendKeys(Keys.ENTER);
+    }
+
+    public static void verifySearchResultPageIsEmpty() {
+        log.info("Verify Search Results page is Empty");
         boolean present;
         try {
             driver.findElement(By.cssSelector(SEARCH_RESULT));

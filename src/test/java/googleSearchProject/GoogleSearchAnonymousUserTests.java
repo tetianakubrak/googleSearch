@@ -35,8 +35,9 @@ String searchParameter = "Appian";
         SearchPage.verifyThatCookiesPageIsOpen();
         SearchPage.clickAcceptCookiesButton();
         SearchPage.verifyGoogleSearchPageIsOpened();
-        SearchPage.verifyGoogleSearchButtonIsNotInteractable();
-        SearchPage.verifySearchResultPageIsNotShown();
+        SearchPage.setFocusIntoSearchField();
+        SearchPage.pressEnterButton();
+        SearchPage.verifySearchResultPageIsEmpty();
     }
 
 }
