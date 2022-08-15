@@ -9,35 +9,37 @@ public class GoogleSearchAnonymousUserTests extends BaseSetup {
 
 String searchParameter = "Appian";
 
+SearchPage searchPage = new SearchPage();
+
     @Test(description = "Verify that user is able to perform search from main page and search result contains entered word")
     void verifyThatSearchIsPossible() {
-        SearchPage.verifyThatCookiesPageIsOpen();
-        SearchPage.clickAcceptCookiesButton();
-        SearchPage.verifyGoogleSearchPageIsOpened();
-        SearchPage.enterSearchValue(searchParameter);
-        SearchPage.clickGoogleSearchButton();
-        SearchPage.verifySearchResults(searchParameter);
+        searchPage.verifyThatCookiesPageIsOpen();
+        searchPage.clickAcceptCookiesButton();
+        searchPage.verifyGoogleSearchPageIsOpened();
+        searchPage.enterSearchValue(searchParameter);
+        searchPage.clickGoogleSearchButton();
+        searchPage.verifySearchResults(searchParameter);
     }
 
     @Test(description = "Verify that list suggestion is opened in drop down when user enters value and don't press Enter")
     void verifyListOfSuggestions(){
-        SearchPage.verifyThatCookiesPageIsOpen();
-        SearchPage.clickAcceptCookiesButton();
-        SearchPage.verifyGoogleSearchPageIsOpened();
-        SearchPage.enterSearchValue(searchParameter);
-        SearchPage.verifySuggestionList();
-        SearchPage.verifyResultInDropdown(searchParameter);
+        searchPage.verifyThatCookiesPageIsOpen();
+        searchPage.clickAcceptCookiesButton();
+        searchPage.verifyGoogleSearchPageIsOpened();
+        searchPage.enterSearchValue(searchParameter);
+        searchPage.verifySuggestionList();
+        searchPage.verifyResultInDropdown(searchParameter);
     }
 
 
     @Test(description = "Verify that search is not search is not started when user clicks Search button without entering any value")
     void verifyNoSearchCanBeStartedEWithEmptySearchField(){
-        SearchPage.verifyThatCookiesPageIsOpen();
-        SearchPage.clickAcceptCookiesButton();
-        SearchPage.verifyGoogleSearchPageIsOpened();
-        SearchPage.setFocusIntoSearchField();
-        SearchPage.pressEnterButton();
-        SearchPage.verifySearchResultPageIsEmpty();
+        searchPage.verifyThatCookiesPageIsOpen();
+        searchPage.clickAcceptCookiesButton();
+        searchPage.verifyGoogleSearchPageIsOpened();
+        searchPage.setFocusIntoSearchField();
+        searchPage.pressEnterButton();
+        searchPage.verifySearchResultPageIsEmpty();
     }
 
 }

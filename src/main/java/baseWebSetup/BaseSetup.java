@@ -16,10 +16,10 @@ import java.time.Duration;
 @Slf4j
 public class BaseSetup {
 
-    protected static WebDriver driver;
+    protected  WebDriver driver;
     static TestData testData;
 
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void beforeMethod() throws IOException {
         testData = new TestData();
 
